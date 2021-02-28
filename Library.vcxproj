@@ -142,6 +142,7 @@
     <ClCompile Include="Library.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="NotationConverter.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="Stack.cpp" />
   </ItemGroup>
@@ -151,6 +152,7 @@
   <ItemGroup>
     <ClInclude Include="List.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="NotationConverter.h" />
     <ClInclude Include="pList.h" />
     <ClInclude Include="pNode.h" />
     <ClInclude Include="pQueue.h" />

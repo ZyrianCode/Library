@@ -2,6 +2,8 @@
 #pragma once
 #include "Node.h"
 
+using namespace std;
+
 /* Контейнер Односвязный список */
 
 template<class T>

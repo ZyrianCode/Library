@@ -1,11 +1,20 @@
-﻿// Library.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
 #include <iostream>
+#include <string>
+#include <Windows.h>
+#include "Queue.h"
+#include "Stack.h"
+#include "NotationConverter.h"
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    setlocale(LC_ALL, "rus");
+    //system("chcp 65001");
+    SetConsoleCP(866);
+    string Infix, Postfix;
+    Postfix = ConvertInfixToPostfix(Infix);
+    cout << "Постфиксная запись: " << Postfix << endl;
+    cout << "Результат: " << GetResultFromPostfix(Postfix);
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
