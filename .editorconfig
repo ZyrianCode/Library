@@ -1,0 +1,12 @@
+# Rules in this file were initially inferred by Visual Studio IntelliCode from the D:\Users\RyzenPC\Program\VisualStudio IDE\Projects\Library\Library\ codebase based on best match to current usage at 28.02.2021
+# You can modify the rules from these initially generated values to suit your own policies
+# You can learn more about editorconfig here: https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference
+[*.cs]
+
+[*]
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+indent_style = space
+indent_size = 4
