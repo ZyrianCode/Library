@@ -33,6 +33,9 @@
     <ClCompile Include="List.cpp">
       <Filter>Исходные файлы\Containers</Filter>
     </ClCompile>
+    <ClCompile Include="Stack.cpp">
+      <Filter>Исходные файлы\Containers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
@@ -48,6 +51,12 @@
       <Filter>Файлы заголовков\Объявления</Filter>
     </ClInclude>
     <ClInclude Include="List.h">
+      <Filter>Файлы заголовков\Для подключения</Filter>
+    </ClInclude>
+    <ClInclude Include="pStack.h">
+      <Filter>Файлы заголовков\Объявления</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
       <Filter>Файлы заголовков\Для подключения</Filter>
     </ClInclude>
   </ItemGroup>
