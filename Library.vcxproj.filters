@@ -25,6 +25,27 @@
     <Filter Include="Исходные файлы\Конвертор нотаций">
       <UniqueIdentifier>{d0c050c2-b32b-4b09-886b-eec84ee15bb0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Для подключения\Containers">
+      <UniqueIdentifier>{a1182ceb-c6dc-41aa-b703-6fd1adda6556}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Для подключения\NotationConverter">
+      <UniqueIdentifier>{aa6e4c13-9c62-4ab4-8e64-22f2d89864f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Объявления\Containers">
+      <UniqueIdentifier>{e6d5dba9-c57f-45e3-8f4d-fab622cd293f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Объявления\NotationConverter">
+      <UniqueIdentifier>{e88c9466-f1e6-4646-a66f-4c05d0443087}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Validators">
+      <UniqueIdentifier>{d95d065c-cb84-43ea-a094-be3f4d9f9999}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Для подключения\Validators">
+      <UniqueIdentifier>{ec36b399-ba21-4227-93e5-ad4da0c18343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Объявления\Validators">
+      <UniqueIdentifier>{800e52d9-093f-4e0c-8d21-ddcf29d62866}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Library.cpp">
@@ -42,40 +63,70 @@
     <ClCompile Include="Queue.cpp">
       <Filter>Исходные файлы\Containers</Filter>
     </ClCompile>
-    <ClCompile Include="NotationConverter.cpp">
+    <ClCompile Include="Notations.cpp">
       <Filter>Исходные файлы\Конвертор нотаций</Filter>
+    </ClCompile>
+    <ClCompile Include="InputOptions.cpp">
+      <Filter>Исходные файлы\Validators</Filter>
+    </ClCompile>
+    <ClCompile Include="InputValidator.cpp">
+      <Filter>Исходные файлы\Validators</Filter>
+    </ClCompile>
+    <ClCompile Include="Validator.cpp">
+      <Filter>Исходные файлы\Validators</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pNode.h">
-      <Filter>Файлы заголовков\Объявления</Filter>
+    <ClInclude Include="List.h">
+      <Filter>Файлы заголовков\Для подключения\Containers</Filter>
     </ClInclude>
     <ClInclude Include="Node.h">
-      <Filter>Файлы заголовков\Для подключения</Filter>
-    </ClInclude>
-    <ClInclude Include="pList.h">
-      <Filter>Файлы заголовков\Объявления</Filter>
-    </ClInclude>
-    <ClInclude Include="List.h">
-      <Filter>Файлы заголовков\Для подключения</Filter>
-    </ClInclude>
-    <ClInclude Include="pStack.h">
-      <Filter>Файлы заголовков\Объявления</Filter>
-    </ClInclude>
-    <ClInclude Include="Stack.h">
-      <Filter>Файлы заголовков\Для подключения</Filter>
-    </ClInclude>
-    <ClInclude Include="pQueue.h">
-      <Filter>Файлы заголовков\Объявления</Filter>
+      <Filter>Файлы заголовков\Для подключения\Containers</Filter>
     </ClInclude>
     <ClInclude Include="Queue.h">
-      <Filter>Файлы заголовков\Для подключения</Filter>
+      <Filter>Файлы заголовков\Для подключения\Containers</Filter>
     </ClInclude>
-    <ClInclude Include="NotationConverter.h">
-      <Filter>Файлы заголовков\Для подключения</Filter>
+    <ClInclude Include="Stack.h">
+      <Filter>Файлы заголовков\Для подключения\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="pList.h">
+      <Filter>Файлы заголовков\Объявления\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="pNode.h">
+      <Filter>Файлы заголовков\Объявления\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="pQueue.h">
+      <Filter>Файлы заголовков\Объявления\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="pStack.h">
+      <Filter>Файлы заголовков\Объявления\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Notations.h">
+      <Filter>Файлы заголовков\Для подключения\NotationConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="pNotations.h">
+      <Filter>Файлы заголовков\Объявления\NotationConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="InputOptions.h">
+      <Filter>Файлы заголовков\Для подключения\Validators</Filter>
+    </ClInclude>
+    <ClInclude Include="InputValidator.h">
+      <Filter>Файлы заголовков\Для подключения\Validators</Filter>
+    </ClInclude>
+    <ClInclude Include="pInputOptions.h">
+      <Filter>Файлы заголовков\Объявления\Validators</Filter>
+    </ClInclude>
+    <ClInclude Include="pInputValidator.h">
+      <Filter>Файлы заголовков\Объявления\Validators</Filter>
+    </ClInclude>
+    <ClInclude Include="Validator.h">
+      <Filter>Файлы заголовков\Для подключения\Validators</Filter>
+    </ClInclude>
+    <ClInclude Include="pValidator.h">
+      <Filter>Файлы заголовков\Объявления\Validators</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

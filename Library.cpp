@@ -1,20 +1,22 @@
-#include <iostream>
-#include <string>
 #include <Windows.h>
 #include "Queue.h"
 #include "Stack.h"
-#include "NotationConverter.h"
+#include "Notations.h"
+#include "InputOptions.h"
 
 
 int main()
 {
     setlocale(LC_ALL, "rus");
-    //system("chcp 65001");
-    SetConsoleCP(866);
-    string Infix, Postfix;
-    Postfix = ConvertInfixToPostfix(Infix);
-    cout << "Постфиксная запись: " << Postfix << endl;
-    cout << "Результат: " << GetResultFromPostfix(Postfix);
+    string Infix, Postfix, valid, result;
+    InputValidator<string> a;
+    valid = a.Input(Infix);
+
+    NotationConverter b;
+    Postfix = b.ConvertInfixToPostfix(valid);
+    cout << "Postfix: " << Postfix << endl;
+    cout << "Result: " << b.GetResultFromPostfix(Postfix);
+
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

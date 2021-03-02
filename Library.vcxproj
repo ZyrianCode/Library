@@ -139,26 +139,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="InputOptions.cpp" />
+    <ClCompile Include="InputValidator.cpp" />
     <ClCompile Include="Library.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="Node.cpp" />
-    <ClCompile Include="NotationConverter.cpp" />
+    <ClCompile Include="Notations.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="Stack.cpp" />
+    <ClCompile Include="Validator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="InputOptions.h" />
+    <ClInclude Include="InputValidator.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Node.h" />
-    <ClInclude Include="NotationConverter.h" />
+    <ClInclude Include="Notations.h" />
+    <ClInclude Include="pInputOptions.h" />
+    <ClInclude Include="pInputValidator.h" />
     <ClInclude Include="pList.h" />
     <ClInclude Include="pNode.h" />
+    <ClInclude Include="pNotations.h" />
     <ClInclude Include="pQueue.h" />
     <ClInclude Include="pStack.h" />
+    <ClInclude Include="pValidator.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="Stack.h" />
+    <ClInclude Include="Validator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
