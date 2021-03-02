@@ -8,15 +8,20 @@
 int main()
 {
     setlocale(LC_ALL, "rus");
-    string Infix, Postfix, valid, result;
+    string Prefix, Infix, Postfix, valid, result;
     InputValidator<string> a;
     valid = a.Input(Infix);
 
     NotationConverter b;
     Postfix = b.ConvertInfixToPostfix(valid);
-    cout << "Postfix: " << Postfix << endl;
-    cout << "Result: " << b.GetResultFromPostfix(Postfix);
-
+    Prefix = b.ConvertPostfixToPrefix(Postfix);
+    cout << "infix to Postfix: " << Postfix << endl;
+    cout << "Result: " << b.GetResultFromPostfix(Postfix) << endl;
+    cout << "Infix to prefix: " << b.ConvertInfixToPrefix(valid) << endl;
+    cout << "Postfix to infix: " << b.ConvertPostfixToInfix(Postfix) << endl;
+    cout << "Postfix to prefix: " << Prefix << endl;
+    cout << "Prefix to infix: " << b.ConvertPrefixToInfix(Prefix) << endl;
+    cout << "Prefix to postfix: " << b.ConvertPrefixToPostfix(Postfix) << endl;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

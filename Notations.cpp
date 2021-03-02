@@ -7,6 +7,56 @@ void NotationConverter::PushToStack(std::stack<string>& Stack, string& Item)
     Item.erase();
 }
 
+string NotationConverter::ConvertPrefixToInfix(string& Expression)
+{
+    stack<string> Stack;
+    Validator<string> validator;
+    string token, FirstOperand, SecondOperand, Concatenated;
+    auto Size = Expression.size();
+    for (auto i = 0; i < Size; i++)
+    {
+        token = Expression[i];
+        if (validator.IsArithmeticalOperator(token)) {
+            FirstOperand = Stack.top();
+            Stack.pop();
+            SecondOperand = Stack.top();
+            Stack.pop();
+            Concatenated = ("(" + FirstOperand + token + SecondOperand + ")");
+            Stack.push(Concatenated);
+        }
+        else
+        {
+            Stack.push(string(token));
+        }
+    }
+    return Stack.top();
+}
+
+string NotationConverter::ConvertPrefixToPostfix(string& Expression)
+{
+    stack<string> Stack;
+    Validator<string> validator;
+    string token, FirstOperand, SecondOperand, Concatenated;
+    auto Size = Expression.size();
+    for (auto i = Size - 1; i >= 0; i++)
+    {
+        token = Expression[i];
+        if (validator.IsArithmeticalOperator(token)) {
+            FirstOperand = Stack.top();
+            Stack.pop();
+            SecondOperand = Stack.top();
+            Stack.pop();
+            Concatenated = ( FirstOperand + SecondOperand + token );
+            Stack.push(Concatenated);
+        }
+        else
+        {
+            Stack.push(string(token));
+        }
+    }
+    return Stack.top();
+}
+
 string NotationConverter::ConvertInfixToPostfix(string& Expression)
 {
     std::stack<string> Stack;
@@ -45,6 +95,84 @@ string NotationConverter::ConvertInfixToPostfix(string& Expression)
         Stack.pop();
     }
     return postfix;
+}
+
+string NotationConverter::ConvertInfixToPrefix(string& Expression)
+{
+    string token;
+    Validator<string> validator;
+    auto Size = Expression.size();
+    reverse(Expression.begin(), Expression.end());
+    for (auto i = 0; i < Size; i++)
+    {
+        token = Expression[i];
+        if (validator.IsOpeningBrackets(token)) {
+            Expression[i] = ')';
+            i++;
+        }
+        else if(validator.IsClosingBrackets(token))
+        {
+            Expression[i] = '(';
+            i++;
+        }
+    }
+    string prefix = ConvertInfixToPostfix(Expression);
+    reverse(prefix.begin(), prefix.end());
+    return prefix;
+}
+
+string NotationConverter::ConvertPostfixToInfix(string& Expression)
+{
+    stack<string> Stack;
+    Validator<string> validator;
+    string token;
+    for (auto i = 0; i < Expression.size(); i++)
+    {
+        token = Expression[i];
+        if (validator.IsOperand(token)) {
+            string operand(token);
+            Stack.push(operand);
+        }
+        else
+        {
+            string FirstOperator = Stack.top();
+            Stack.pop();
+            string SecondOperator = Stack.top();
+            Stack.pop();
+            Stack.push("(" + SecondOperator + token + FirstOperator + ")");
+        }
+    }
+    return Stack.top();
+}
+
+string NotationConverter::ConvertPostfixToPrefix(string& Expression)
+{
+    stack<string> Stack;
+    Validator<string> validator;
+    string token, FirstOperand, SecondOperand, Concatenated, Result = "";
+    auto Size = Expression.size();
+    for (auto i = 0; i < Size; i++)
+    {
+        token = Expression[i];
+        if (validator.IsArithmeticalOperator(token)) {
+            FirstOperand = Stack.top();
+            Stack.pop();
+            SecondOperand = Stack.top();
+            Stack.pop();
+            Concatenated = token + SecondOperand + FirstOperand;
+            Stack.push(Concatenated);
+        }
+        else
+        {
+            Stack.push(string(token));
+        }
+    }
+    while (!Stack.empty())
+    {
+        Result += Stack.top();
+        Stack.pop();
+    }
+    return Result;
 }
 
 double NotationConverter::GetResult(double& left, double& right, string& operation)
