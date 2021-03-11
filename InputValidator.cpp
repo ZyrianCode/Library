@@ -23,7 +23,7 @@ T InputValidator<T>::Input(T value)
 {
     setlocale(LC_ALL, "ru");
     std::string result = "";
-    std::regex r("^[\\d()\\+\\%\\/\\*\\-\\^]+$");
+    std::regex r("^[\\d\\w()\\+\\%\\/\\*\\-\\^]+$");
     while ((result.empty() || value.empty()) && !std::regex_match(value, r))
     {
         system("Cls");

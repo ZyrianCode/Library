@@ -34,7 +34,7 @@ bool Validator<T>::IsPostfixExpressionValid(T& Expression)
 template<class T>
 bool Validator<T>::IsOperand(T Character)
 {
-    regex isOperand("[\\d]");
+    regex isOperand("[\\d\\w]");
     return regex_match(Character, isOperand);
 }
 

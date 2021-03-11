@@ -21,7 +21,7 @@ int main()
     cout << "Postfix to infix: " << b.ConvertPostfixToInfix(Postfix) << endl;
     cout << "Postfix to prefix: " << Prefix << endl;
     cout << "Prefix to infix: " << b.ConvertPrefixToInfix(Prefix) << endl;
-    cout << "Prefix to postfix: " << b.ConvertPrefixToPostfix(Postfix) << endl;
+    cout << "Prefix to postfix: " << b.ConvertPrefixToPostfix(Prefix) << endl;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

@@ -9,19 +9,31 @@ void NotationConverter::PushToStack(std::stack<string>& Stack, string& Item)
 
 string NotationConverter::ConvertPrefixToInfix(string& Expression)
 {
+    if (Expression.empty())
+    {
+        return "Expression was null";
+    }
     stack<string> Stack;
     Validator<string> validator;
-    string token, FirstOperand, SecondOperand, Concatenated;
-    auto Size = Expression.size();
-    for (auto i = 0; i < Size; i++)
+    string token, FirstOperand = "", SecondOperand, Concatenated;
+    int Size = Expression.size();
+    for (int i = Size; i >= 0; i--)
     {
         token = Expression[i];
         if (validator.IsArithmeticalOperator(token)) {
-            FirstOperand = Stack.top();
-            Stack.pop();
-            SecondOperand = Stack.top();
-            Stack.pop();
-            Concatenated = ("(" + FirstOperand + token + SecondOperand + ")");
+            if (Stack.empty()) { FirstOperand = "x"; }
+            else
+            {
+                FirstOperand = Stack.top();
+                Stack.pop();
+            }
+            if (Stack.empty()) { SecondOperand = "x"; }
+            else
+            {
+                SecondOperand = Stack.top();
+                Stack.pop();
+            }
+            Concatenated = (FirstOperand + token + SecondOperand);
             Stack.push(Concatenated);
         }
         else
@@ -34,18 +46,30 @@ string NotationConverter::ConvertPrefixToInfix(string& Expression)
 
 string NotationConverter::ConvertPrefixToPostfix(string& Expression)
 {
+    if (Expression.empty())
+    {
+        return "Expression was null";
+    }
     stack<string> Stack;
     Validator<string> validator;
     string token, FirstOperand, SecondOperand, Concatenated;
-    auto Size = Expression.size();
-    for (auto i = Size - 1; i >= 0; i++)
+    int Size = Expression.size();
+    for (int i = Size; i >= 0; i--)
     {
         token = Expression[i];
         if (validator.IsArithmeticalOperator(token)) {
-            FirstOperand = Stack.top();
-            Stack.pop();
-            SecondOperand = Stack.top();
-            Stack.pop();
+            if (Stack.empty()) { FirstOperand = "x"; }
+            else
+            {
+                FirstOperand = Stack.top();
+                Stack.pop();
+            }
+            if (Stack.empty()) { SecondOperand = "x";  }
+            else
+            {
+                SecondOperand = Stack.top();
+                Stack.pop();
+            }
             Concatenated = ( FirstOperand + SecondOperand + token );
             Stack.push(Concatenated);
         }
@@ -59,6 +83,10 @@ string NotationConverter::ConvertPrefixToPostfix(string& Expression)
 
 string NotationConverter::ConvertInfixToPostfix(string& Expression)
 {
+    if (Expression.empty())
+    {
+        return "Expression was null";
+    }
     std::stack<string> Stack;
     Validator<string> validator;
     string token, postfix;
@@ -99,6 +127,10 @@ string NotationConverter::ConvertInfixToPostfix(string& Expression)
 
 string NotationConverter::ConvertInfixToPrefix(string& Expression)
 {
+    if (Expression.empty())
+    {
+        return "Expression was null";
+    }
     string token;
     Validator<string> validator;
     auto Size = Expression.size();
@@ -123,9 +155,13 @@ string NotationConverter::ConvertInfixToPrefix(string& Expression)
 
 string NotationConverter::ConvertPostfixToInfix(string& Expression)
 {
+    if (Expression.empty())
+    {
+        return "Expression was null";
+    }
     stack<string> Stack;
     Validator<string> validator;
-    string token;
+    string token, FirstOperator, SecondOperator;
     for (auto i = 0; i < Expression.size(); i++)
     {
         token = Expression[i];
@@ -135,11 +171,20 @@ string NotationConverter::ConvertPostfixToInfix(string& Expression)
         }
         else
         {
-            string FirstOperator = Stack.top();
-            Stack.pop();
-            string SecondOperator = Stack.top();
-            Stack.pop();
-            Stack.push("(" + SecondOperator + token + FirstOperator + ")");
+            if (Stack.empty()){ FirstOperator = "x"; }
+            else
+            {
+                FirstOperator = Stack.top();
+                Stack.pop();
+            }
+            if(Stack.empty()){ SecondOperator = "x"; }
+            else
+            {
+                SecondOperator = Stack.top();
+                Stack.pop();
+            }
+
+            Stack.push(SecondOperator + token + FirstOperator);
         }
     }
     return Stack.top();
@@ -147,6 +192,10 @@ string NotationConverter::ConvertPostfixToInfix(string& Expression)
 
 string NotationConverter::ConvertPostfixToPrefix(string& Expression)
 {
+    if (Expression.empty())
+    {
+        return "Expression was null";
+    }
     stack<string> Stack;
     Validator<string> validator;
     string token, FirstOperand, SecondOperand, Concatenated, Result = "";
@@ -155,10 +204,17 @@ string NotationConverter::ConvertPostfixToPrefix(string& Expression)
     {
         token = Expression[i];
         if (validator.IsArithmeticalOperator(token)) {
-            FirstOperand = Stack.top();
-            Stack.pop();
-            SecondOperand = Stack.top();
-            Stack.pop();
+            if (Stack.empty()) { FirstOperand = "x"; }
+            else
+            {
+                FirstOperand = Stack.top();
+                Stack.pop();
+            }
+            if(Stack.empty()){ SecondOperand = "x";}
+            else{
+                SecondOperand = Stack.top();
+                Stack.pop();
+            }
             Concatenated = token + SecondOperand + FirstOperand;
             Stack.push(Concatenated);
         }
@@ -187,6 +243,10 @@ double NotationConverter::GetResult(double& left, double& right, string& operati
 
 string NotationConverter::GetResultFromPostfix(string& Postfix)
 {
+    if (Postfix.empty())
+    {
+        return "Expression was null";
+    }
     std::stack<string> Stack;
     Validator<string> Validator;
 
@@ -194,7 +254,7 @@ string NotationConverter::GetResultFromPostfix(string& Postfix)
 
     string buffer, operation;
     double left, right, result;
-    regex isnum("[\\d]");
+    regex isnum("[\\d\\w]");
     regex isOperator("[\\+\\-\\/*%\\^]");
     for (auto i = 0; i < Postfix.size(); i++)
     {
