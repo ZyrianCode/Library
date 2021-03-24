@@ -139,25 +139,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ExpressionDefragmentator.cpp" />
+    <ClCompile Include="ExpressionFormatter.cpp" />
     <ClCompile Include="InputOptions.cpp" />
     <ClCompile Include="InputValidator.cpp" />
     <ClCompile Include="Library.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Notations.cpp" />
+    <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="Stack.cpp" />
     <ClCompile Include="Validator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ExpressionDefragmentator.h" />
+    <ClInclude Include="ExpressionFormatter.h" />
     <ClInclude Include="InputOptions.h" />
     <ClInclude Include="InputValidator.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Notations.h" />
+    <ClInclude Include="Parser.h" />
+    <ClInclude Include="pExpressionFormatter.h" />
     <ClInclude Include="pInputOptions.h" />
     <ClInclude Include="pInputValidator.h" />
     <ClInclude Include="pList.h" />

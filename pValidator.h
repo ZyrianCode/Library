@@ -30,6 +30,20 @@ public:
     bool IsOperand(T Character);
 
     /// <summary>
+    /// Определяет является ли входящий параметр буквенным операндом
+    /// </summary>
+    /// <param name="Character"></param>
+    /// <returns></returns>
+    bool IsLetterOperand(T Character);
+
+    /// <summary>
+    /// Определяет является ли входящий параметр численным операндом
+    /// </summary>
+    /// <param name="Character"></param>
+    /// <returns></returns>
+    bool IsNumericalOperand(T Character);
+
+    /// <summary>
     /// Проверяет является ли входящий параметр арифметическим оператором
     /// </summary>
     /// <param name="Character"></param>

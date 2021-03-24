@@ -39,6 +39,21 @@ bool Validator<T>::IsOperand(T Character)
 }
 
 template<class T>
+bool Validator<T>::IsLetterOperand(T Character)
+{
+    regex isLetterOperand("[\\w]");
+    bool a = regex_match(Character, isLetterOperand);
+    return a;
+}
+
+template<class T>
+bool Validator<T>::IsNumericalOperand(T Character)
+{
+    regex isNumericalOperand("^[\\d]+$");
+    return regex_match(Character, isNumericalOperand);
+}
+
+template<class T>
 bool Validator<T>::IsArithmeticalOperator(T Character)
 {
     regex isOperator("[\\+\\%\\/\\*\\-\\^]");

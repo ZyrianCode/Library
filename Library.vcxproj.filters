@@ -46,6 +46,15 @@
     <Filter Include="Файлы заголовков\Объявления\Validators">
       <UniqueIdentifier>{800e52d9-093f-4e0c-8d21-ddcf29d62866}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Parser">
+      <UniqueIdentifier>{a60f3dbc-0e87-4158-901c-0d7489069563}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Parser">
+      <UniqueIdentifier>{f724ff73-cc35-4204-9937-e822ae62468f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Объявления\Parser">
+      <UniqueIdentifier>{6e1bb6fd-9f53-41cf-b829-961c47708c15}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Library.cpp">
@@ -75,9 +84,19 @@
     <ClCompile Include="Validator.cpp">
       <Filter>Исходные файлы\Validators</Filter>
     </ClCompile>
+    <ClCompile Include="ExpressionFormatter.cpp">
+      <Filter>Исходные файлы\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="ExpressionDefragmentator.cpp">
+      <Filter>Исходные файлы\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser.cpp">
+      <Filter>Исходные файлы\Parser</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="List.h">
@@ -127,6 +146,18 @@
     </ClInclude>
     <ClInclude Include="pValidator.h">
       <Filter>Файлы заголовков\Объявления\Validators</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpressionFormatter.h">
+      <Filter>Файлы заголовков\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="pExpressionFormatter.h">
+      <Filter>Файлы заголовков\Объявления\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpressionDefragmentator.h">
+      <Filter>Файлы заголовков\Объявления\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser.h">
+      <Filter>Файлы заголовков\Объявления\Parser</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
